@@ -16,15 +16,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="vX3-Tj-DJg">
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.29999999999999999" translatesAutoresizingMaskIntoConstraints="NO" id="vX3-Tj-DJg">
                                 <rect key="frame" x="20" y="446" width="374" height="4"/>
                             </progressView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="How do you like your eggs?" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="kqd-kk-2Ax">
-                                <rect key="frame" x="43" y="164" width="328" height="33.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="e5x-pu-CJn">
                                 <rect key="frame" x="20" y="654" width="374" height="208"/>
                                 <subviews>
@@ -34,9 +28,13 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="56" id="5nq-XN-StW"/>
                                         </constraints>
-                                        <state key="normal" title="Button">
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <state key="normal" title="Soft">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="hardnessSelected:" destination="BYZ-38-t0r" eventType="touchUpInside" id="uG1-ak-UoI"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WDG-q9-fq7">
                                         <rect key="frame" x="0.0" y="76" width="374" height="56"/>
@@ -44,9 +42,13 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="56" id="kkR-0q-B1l"/>
                                         </constraints>
-                                        <state key="normal" title="Button">
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <state key="normal" title="Medium">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="hardnessSelected:" destination="BYZ-38-t0r" eventType="touchUpInside" id="PcY-Zx-h98"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sgc-9T-9Ty">
                                         <rect key="frame" x="0.0" y="152" width="374" height="56"/>
@@ -54,30 +56,41 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="56" id="Mjh-Qg-f1z"/>
                                         </constraints>
-                                        <state key="normal" title="Button">
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <state key="normal" title="Hard">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="hardnessSelected:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8HD-nx-Kdk"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="How do you like your eggs?" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="kqd-kk-2Ax">
+                                <rect key="frame" x="50" y="162" width="328.5" height="33.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="e5x-pu-CJn" secondAttribute="trailing" constant="20" id="EBF-6U-SWJ"/>
-                            <constraint firstItem="vX3-Tj-DJg" firstAttribute="centerX" secondItem="kqd-kk-2Ax" secondAttribute="centerX" id="JO0-eo-3IK"/>
+                            <constraint firstItem="vX3-Tj-DJg" firstAttribute="centerX" secondItem="kqd-kk-2Ax" secondAttribute="centerX" constant="-7.25" id="JO0-eo-3IK"/>
                             <constraint firstItem="vX3-Tj-DJg" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="NiU-EN-9rZ"/>
-                            <constraint firstItem="kqd-kk-2Ax" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="120" id="RJU-bx-AOx"/>
                             <constraint firstItem="e5x-pu-CJn" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="RNH-0a-Rhp"/>
                             <constraint firstItem="e5x-pu-CJn" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="jLp-h2-xA1"/>
-                            <constraint firstItem="vX3-Tj-DJg" firstAttribute="top" secondItem="kqd-kk-2Ax" secondAttribute="bottom" constant="248.5" id="l7a-ig-Kk5"/>
+                            <constraint firstItem="vX3-Tj-DJg" firstAttribute="top" secondItem="kqd-kk-2Ax" secondAttribute="bottom" constant="250.5" id="l7a-ig-Kk5"/>
                             <constraint firstItem="vX3-Tj-DJg" firstAttribute="leading" secondItem="e5x-pu-CJn" secondAttribute="leading" id="lIA-EP-Vjd"/>
                             <constraint firstItem="e5x-pu-CJn" firstAttribute="top" secondItem="vX3-Tj-DJg" secondAttribute="bottom" constant="204" id="mDR-Nh-f6g"/>
                             <constraint firstItem="vX3-Tj-DJg" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="n39-Qv-pFN"/>
-                            <constraint firstItem="kqd-kk-2Ax" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="43" id="o0i-1V-fpX"/>
-                            <constraint firstItem="kqd-kk-2Ax" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="120" id="oGx-ec-Txk"/>
+                            <constraint firstItem="kqd-kk-2Ax" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="118" id="oGx-ec-Txk"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="progressView" destination="vX3-Tj-DJg" id="Ozz-aI-zUZ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
