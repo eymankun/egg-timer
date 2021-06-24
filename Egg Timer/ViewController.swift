@@ -20,18 +20,34 @@ class ViewController: UIViewController {
         progressView.progress = 0.0
     }
     
+    func alertShow(title: String?, message: Int?) {
+        let alert = UIAlertController(title: title, message: "boiling time is \(message!).", preferredStyle: .alert)
+        let ok = UIAlertAction(title: "OK", style: .default, handler: { action in
+        })
+        alert.addAction(ok)
+        
+        DispatchQueue.main.async(execute: {
+            self.present(alert, animated: true)
+        })
+    }
+    
+    func printAndCountdown(boilingTime: Int) {
+        print("boiling time is \(boilingTime)")
+        counter = boilingTime
+    }
+    
     @IBAction func hardnessSelected(_ sender: UIButton) {
         
         let hardness = sender.currentTitle
         
-        if let boilingTime = eggTime[hardness!] {
+        if let time = eggTime[hardness!] {
             switch hardness {
             case "Soft":
-                print("boiling time is \(boilingTime)")
+                printAndCountdown(boilingTime: time)
             case "Medium":
-                print("boiling time is \(boilingTime)")
+                printAndCountdown(boilingTime: time)
             case "Hard":
-                print("boiling time is \(boilingTime)")
+                printAndCountdown(boilingTime: time)
             default:
                 print("Please select egg hardness.")
             }
@@ -39,11 +55,13 @@ class ViewController: UIViewController {
         
         timer.invalidate()
         timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { timer in
-            self.counter += 1
-            print(self.counter)
-            if self.counter == self.eggTime[hardness!] {
+            if self.counter > 0 {
+                print(self.counter)
+                self.counter -= 1
+            } else {
                 timer.invalidate()
-                print("Boiling is done")
+//                print("Boiling is done.")
+                self.alertShow(title: "Boiling is done.", message: self.eggTime[hardness!])
             }
         }
     }
