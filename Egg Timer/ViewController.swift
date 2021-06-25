@@ -37,27 +37,27 @@ class ViewController: UIViewController {
     //TODO: print the boiling time to label, and set countdown time. also reset the secondsPassed to 0
     func printAndCountdown(boilingTime: Int) {
 //        print("boiling time is \(boilingTime)")
-        label.text = "boiling time is \(boilingTime) minutes"
+        label.text = "boiling time is \(boilingTime / 60) minutes"
         counter = boilingTime
         secondsPassed = 0.0
     }
     
     //TODO: timer func. fire time every 1 sec and update progress bar. also trigger alert when timer is done
-    func boilEggTimer(timeToBoil: Int?) {
+    func boilEggTimer(totalTime: Int?) {
         timer.invalidate()
         timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { timer in
             if self.counter > 0 {
 //                print(self.secondsPassed)
 //                print(self.counter)
-//                print(timeToBoil!)
+//                print(totalTime!)
                 self.counter -= 1
                 self.secondsPassed += 1
-                self.progressView.progress = Float(self.secondsPassed) / Float(timeToBoil!)
+                self.progressView.progress = Float(self.secondsPassed) / Float(totalTime!)
                 
             } else {
                 timer.invalidate()
 //                print("Boiling is done.")
-                self.alertShow(title: "Boiling is done.", message: timeToBoil)
+                self.alertShow(title: "Boiling is done.", message: totalTime)
                 self.label.text = "How do you like your eggs?"
             }
         }
@@ -67,21 +67,20 @@ class ViewController: UIViewController {
     @IBAction func hardnessSelected(_ sender: UIButton) {
         
         let hardness = sender.currentTitle
-        let timeToBoil = eggTime[hardness!]
+        let timeToBoil = eggTime[hardness!]!
         
-        if let time = timeToBoil {
-            switch hardness {
-            case "Soft":
-                printAndCountdown(boilingTime: time)
-            case "Medium":
-                printAndCountdown(boilingTime: time)
-            case "Hard":
-                printAndCountdown(boilingTime: time)
-            default:
-                print("Please select egg hardness.")
-            }
+        switch hardness {
+        case "Soft":
+            printAndCountdown(boilingTime: timeToBoil)
+        case "Medium":
+            printAndCountdown(boilingTime: timeToBoil)
+        case "Hard":
+            printAndCountdown(boilingTime: timeToBoil)
+        default:
+            print("Please select egg hardness.")
         }
-        boilEggTimer(timeToBoil: timeToBoil)
+        
+        boilEggTimer(totalTime: timeToBoil)
     }
     
 }
