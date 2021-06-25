@@ -89,6 +89,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="label" destination="kqd-kk-2Ax" id="kPX-ZC-mkH"/>
                         <outlet property="progressView" destination="vX3-Tj-DJg" id="Ozz-aI-zUZ"/>
                     </connections>
                 </viewController>

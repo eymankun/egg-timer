@@ -12,8 +12,10 @@ class ViewController: UIViewController {
     let eggTime = ["Soft": 5, "Medium": 8, "Hard": 12]
     var timer = Timer()
     var counter = 0
+    var secondsPassed = 0.0
     
     @IBOutlet weak var progressView: UIProgressView!
+    @IBOutlet weak var label: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,15 +34,18 @@ class ViewController: UIViewController {
     }
     
     func printAndCountdown(boilingTime: Int) {
-        print("boiling time is \(boilingTime)")
+//        print("boiling time is \(boilingTime)")
+        
         counter = boilingTime
+        secondsPassed = 0.0
     }
     
     @IBAction func hardnessSelected(_ sender: UIButton) {
         
         let hardness = sender.currentTitle
+        let timeToBoil = eggTime[hardness!]
         
-        if let time = eggTime[hardness!] {
+        if let time = timeToBoil {
             switch hardness {
             case "Soft":
                 printAndCountdown(boilingTime: time)
@@ -56,8 +61,13 @@ class ViewController: UIViewController {
         timer.invalidate()
         timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { timer in
             if self.counter > 0 {
+                print(self.secondsPassed)
                 print(self.counter)
+                print(timeToBoil!)
                 self.counter -= 1
+                self.secondsPassed += 1
+                self.progressView.progress = Float(self.secondsPassed) / Float(timeToBoil!)
+                
             } else {
                 timer.invalidate()
 //                print("Boiling is done.")
