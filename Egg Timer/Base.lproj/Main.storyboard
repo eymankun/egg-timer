@@ -72,10 +72,21 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="400 seconds left" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="K7G-lZ-Ezs">
+                                <rect key="frame" x="104" y="323" width="206" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="34" id="0TX-Lr-3Bf"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="K7G-lZ-Ezs" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="104" id="1xP-wu-l2A"/>
+                            <constraint firstItem="vX3-Tj-DJg" firstAttribute="top" secondItem="K7G-lZ-Ezs" secondAttribute="bottom" constant="89" id="33B-6u-TJU"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="e5x-pu-CJn" secondAttribute="trailing" constant="20" id="EBF-6U-SWJ"/>
                             <constraint firstItem="vX3-Tj-DJg" firstAttribute="centerX" secondItem="kqd-kk-2Ax" secondAttribute="centerX" constant="-7.25" id="JO0-eo-3IK"/>
                             <constraint firstItem="vX3-Tj-DJg" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="NiU-EN-9rZ"/>
@@ -86,11 +97,13 @@
                             <constraint firstItem="e5x-pu-CJn" firstAttribute="top" secondItem="vX3-Tj-DJg" secondAttribute="bottom" constant="204" id="mDR-Nh-f6g"/>
                             <constraint firstItem="vX3-Tj-DJg" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="n39-Qv-pFN"/>
                             <constraint firstItem="kqd-kk-2Ax" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="118" id="oGx-ec-Txk"/>
+                            <constraint firstItem="K7G-lZ-Ezs" firstAttribute="centerX" secondItem="vX3-Tj-DJg" secondAttribute="centerX" id="pVa-f1-HCz"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="label" destination="kqd-kk-2Ax" id="kPX-ZC-mkH"/>
                         <outlet property="progressView" destination="vX3-Tj-DJg" id="Ozz-aI-zUZ"/>
+                        <outlet property="timerLabel" destination="K7G-lZ-Ezs" id="5Pw-0f-Ts9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

@@ -16,15 +16,17 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var progressView: UIProgressView!
     @IBOutlet weak var label: UILabel!
+    @IBOutlet weak var timerLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         progressView.progress = 0.0
+        timerLabel.text = ""
     }
     
     //TODO: Create alert when the time is done
     func alertShow(title: String?, message: Int?) {
-        let alert = UIAlertController(title: title, message: "boiling time is \(message!) minutes.", preferredStyle: .alert)
+        let alert = UIAlertController(title: title, message: "boiling time is \(message! / 60 ) minutes.", preferredStyle: .alert)
         let ok = UIAlertAction(title: "OK", style: .default, handler: { action in
         })
         alert.addAction(ok)
@@ -53,12 +55,13 @@ class ViewController: UIViewController {
                 self.counter -= 1
                 self.secondsPassed += 1
                 self.progressView.progress = Float(self.secondsPassed) / Float(totalTime!)
-                
+                self.timerLabel.text = "\(self.counter) seconds left."
             } else {
                 timer.invalidate()
 //                print("Boiling is done.")
                 self.alertShow(title: "Boiling is done.", message: totalTime)
                 self.label.text = "How do you like your eggs?"
+                self.timerLabel.text = ""
             }
         }
     }
