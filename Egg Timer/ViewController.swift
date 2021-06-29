@@ -6,13 +6,16 @@
 //
 
 import UIKit
+import AVFoundation
 
 class ViewController: UIViewController {
     
     let eggTime = ["Soft": 300, "Medium": 480, "Hard": 720]
+//    let eggTime = ["Soft": 5, "Medium": 8, "Hard": 12]
     var timer = Timer()
     var counter = 0
     var secondsPassed = 0.0
+    let systemSoundID: SystemSoundID = 1304 // alert sound
     
     @IBOutlet weak var progressView: UIProgressView!
     @IBOutlet weak var label: UILabel!
@@ -59,6 +62,9 @@ class ViewController: UIViewController {
             } else {
                 timer.invalidate()
 //                print("Boiling is done.")
+//                AudioServicesPlaySystemSound(self.systemSoundID)
+                self.progressView.progress = 0.0
+                AudioServicesPlayAlertSound(self.systemSoundID)
                 self.alertShow(title: "Boiling is done.", message: totalTime)
                 self.label.text = "How do you like your eggs?"
                 self.timerLabel.text = ""
