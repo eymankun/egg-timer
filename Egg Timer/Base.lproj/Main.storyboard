@@ -68,6 +68,9 @@
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="How do you like your eggs?" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="kqd-kk-2Ax">
                                 <rect key="frame" x="50" y="162" width="328.5" height="33.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="33.5" id="hNe-9S-rGT"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="28"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -91,12 +94,11 @@
                             <constraint firstItem="vX3-Tj-DJg" firstAttribute="centerX" secondItem="kqd-kk-2Ax" secondAttribute="centerX" constant="-7.25" id="JO0-eo-3IK"/>
                             <constraint firstItem="vX3-Tj-DJg" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="NiU-EN-9rZ"/>
                             <constraint firstItem="e5x-pu-CJn" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="RNH-0a-Rhp"/>
+                            <constraint firstItem="kqd-kk-2Ax" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="Z4B-rj-Anr"/>
                             <constraint firstItem="e5x-pu-CJn" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="jLp-h2-xA1"/>
                             <constraint firstItem="vX3-Tj-DJg" firstAttribute="top" secondItem="kqd-kk-2Ax" secondAttribute="bottom" constant="250.5" id="l7a-ig-Kk5"/>
                             <constraint firstItem="vX3-Tj-DJg" firstAttribute="leading" secondItem="e5x-pu-CJn" secondAttribute="leading" id="lIA-EP-Vjd"/>
-                            <constraint firstItem="e5x-pu-CJn" firstAttribute="top" secondItem="vX3-Tj-DJg" secondAttribute="bottom" constant="204" id="mDR-Nh-f6g"/>
                             <constraint firstItem="vX3-Tj-DJg" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="n39-Qv-pFN"/>
-                            <constraint firstItem="kqd-kk-2Ax" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="118" id="oGx-ec-Txk"/>
                             <constraint firstItem="K7G-lZ-Ezs" firstAttribute="centerX" secondItem="vX3-Tj-DJg" secondAttribute="centerX" id="pVa-f1-HCz"/>
                         </constraints>
                     </view>
